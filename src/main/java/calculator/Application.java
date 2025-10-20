@@ -10,6 +10,18 @@ public class Application {
 
         if (input.length() == 0) {
             System.out.println("결과 : 0");
+        } else if (input.charAt(0) == '/' && input.charAt(1) == '/') {
+            int idx = input.indexOf("\\n");
+            String custom = ",|:";
+            for (char c : input.substring(2, idx).toCharArray()) {
+                custom += "|" + c;
+            }
+            String arr[] = input.substring(idx + 2).split(custom);
+            int num = 0;
+            for (String cut : arr) {
+                num += Integer.parseInt(cut);
+            }
+            System.out.println("결과 : " + num);
         } else {
             String arr[] = input.split(",|:");
             int num = 0;
