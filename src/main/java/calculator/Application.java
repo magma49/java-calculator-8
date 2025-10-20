@@ -19,14 +19,22 @@ public class Application {
             String arr[] = input.substring(idx + 2).split(custom);
             int num = 0;
             for (String cut : arr) {
-                num += Integer.parseInt(cut);
+                try {
+                    num += Integer.parseInt(cut);
+                } catch (NumberFormatException e) {
+                    throw new IllegalArgumentException("잘못된 입력");
+                }
             }
             System.out.println("결과 : " + num);
         } else {
             String arr[] = input.split(",|:");
             int num = 0;
             for (String cut : arr) {
-                num += Integer.parseInt(cut);
+                try {
+                    num += Integer.parseInt(cut);
+                } catch (NumberFormatException e) {
+                    throw new IllegalArgumentException("잘못된 입력");
+                }
             }
             System.out.println("결과 : " + num);
         }
