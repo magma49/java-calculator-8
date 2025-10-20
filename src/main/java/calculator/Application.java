@@ -20,6 +20,9 @@ public class Application {
             int num = 0;
             for (String cut : arr) {
                 try {
+                    if (cut.isEmpty()) {
+                        continue;
+                    }
                     num += Integer.parseInt(cut);
                 } catch (NumberFormatException e) {
                     throw new IllegalArgumentException("잘못된 입력");
@@ -31,6 +34,9 @@ public class Application {
             int num = 0;
             for (String cut : arr) {
                 try {
+                    if (cut.isEmpty()) {
+                        continue;
+                    }
                     num += Integer.parseInt(cut);
                 } catch (NumberFormatException e) {
                     throw new IllegalArgumentException("잘못된 입력");
