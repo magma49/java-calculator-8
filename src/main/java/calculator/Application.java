@@ -14,7 +14,11 @@ public class Application {
             int idx = input.indexOf("\\n");
             String custom = ",|:";
             for (char c : input.substring(2, idx).toCharArray()) {
-                custom += "|" + c;
+                if (c == '.') {
+                    custom += "|" + "\\" + c;
+                } else {
+                    custom += "|" + c;
+                }
             }
             String arr[] = input.substring(idx + 2).split(custom);
             int num = 0;
