@@ -10,6 +10,13 @@ public class Application {
 
         if (input.length() == 0) {
             System.out.println("결과 : 0");
+        } else {
+            String arr[] = input.split(",|:");
+            int num = 0;
+            for (String cut : arr) {
+                num += Integer.parseInt(cut);
+            }
+            System.out.println("결과 : " + num);
         }
 
     }
