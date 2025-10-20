@@ -27,6 +27,9 @@ public class Application {
                     if (cut.isEmpty()) {
                         continue;
                     }
+                    if (Integer.parseInt(cut) < 0) {
+                        throw new IllegalArgumentException("잘못된 입력");
+                    }
                     num += Integer.parseInt(cut);
                 } catch (NumberFormatException e) {
                     throw new IllegalArgumentException("잘못된 입력");
@@ -40,6 +43,9 @@ public class Application {
                 try {
                     if (cut.isEmpty()) {
                         continue;
+                    }
+                    if (Integer.parseInt(cut) < 0) {
+                        throw new IllegalArgumentException("잘못된 입력");
                     }
                     num += Integer.parseInt(cut);
                 } catch (NumberFormatException e) {
